@@ -1,0 +1,119 @@
+:root {
+    --bg-dark-pure: #090a0f;
+    --bg-group-card: #1a1d2e;
+    --accent-neon: #00f5d4;
+    --text-primary: #ffffff;
+    --text-muted: #8e94af;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+body { background-color: var(--bg-dark-pure); color: var(--text-primary); padding: 16px; padding-top: 80px; }
+
+/* Cabeçalho */
+.header-streaming { position: fixed; top: 0; left: 0; right: 0; height: 60px; background: rgba(9, 10, 15, 0.95); backdrop-filter: blur(10px); display: flex; align-items: center; padding: 0 16px; gap: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); z-index: 1000; }
+.logo-copa { height: 35px; width: 35px; object-fit: contain; }
+.titulo-principal { font-size: 1.1rem; font-weight: 800; color: var(--accent-neon); }
+
+/* Seleção de Ano */
+.ano-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.ano-btn {
+    background: #141622;
+    color: var(--text-muted);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 10px 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ano-btn.active { background: var(--accent-neon); color: #000; border-color: var(--accent-neon); }
+
+#conteudo-copa { padding: 0 15px; max-width: 500px; margin: 0 auto; }
+
+/* Abas */
+.aba-container { display: flex; gap: 10px; margin-bottom: 20px; background: #141622; padding: 5px; border-radius: 8px; }
+.aba-btn { flex: 1; padding: 10px; border: none; background: transparent; color: var(--text-muted); font-weight: bold; cursor: pointer; border-radius: 6px; }
+.aba-btn.active { background: var(--accent-neon); color: #000; }
+
+/* Tabelas e Grupos */
+.tabela-wrapper { margin-bottom: 25px; background: var(--bg-group-card); border-radius: 12px; padding: 15px; border: 1px solid rgba(255,255,255,0.05); }
+.grupo-titulo { color: var(--accent-neon); margin-bottom: 15px; font-size: 1rem; font-weight: 900; }
+
+table { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 10px; }
+th { text-align: center; color: var(--text-muted); font-size: 0.7rem; padding-bottom: 10px; width: 14%; }
+th:first-child { width: 30%; } /* Coluna Time um pouco mais larga */
+td { text-align: center; vertical-align: middle; padding: 8px 2px; font-size: 0.8rem; }
+
+.col-time { display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; }
+.bandeira { width: 32px; height: 22px; object-fit: cover; border-radius: 3px; }
+.nome-pais { font-weight: 700; font-size: 0.75rem; color: #fff; text-align: center; }
+
+/* Mata-Mata e Cards */
+.fase-titulo { color: var(--accent-neon); font-size: 0.9rem; margin-bottom: 12px; text-transform: uppercase; border-bottom: 1px solid #333; }
+.match-card { 
+    background: var(--bg-group-card); 
+    border-radius: 12px; 
+    padding: 12px; 
+    margin-bottom: 10px; 
+    display: flex; 
+    flex-direction: column; 
+    border: 1px solid rgba(255,255,255,0.05); 
+}
+
+.match-main { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.team-box { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+.team-box.right { flex-direction: row-reverse; text-align: right; }
+
+.match-score { 
+    font-weight: 900; font-size: 1.1rem; color: #fff; background: #000; 
+    padding: 5px 10px; border-radius: 4px; min-width: 60px; text-align: center;
+    display: flex; flex-direction: column; align-items: center; line-height: 1.1;
+}
+
+.bandeira-mini { width: 24px; height: 16px; object-fit: cover; border-radius: 2px; }
+.team-name { font-size: 0.7rem; font-weight: 600; }
+.penaltis { font-size: 0.75rem; color: var(--text-muted); display: block; margin-top: 4px; }
+
+/* Comentários */
+.comment-area { display: flex; gap: 10px; width: 100%; margin-top: 10px; padding-top: 5px; border-top: 1px solid rgba(255,255,255,0.1); }
+.comment-wrapper { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; }
+.btn-toggle { width: 8px; height: 8px; background: white; border-radius: 50%; border: none; cursor: pointer; }
+.bubble { display: none; padding: 8px; font-size: 0.55rem; color: #000; background: #fff; border-radius: 10px; width: 100%; text-align: center; }
+.bubble.active { display: block; }
+
+/* Estilo Flâmula (Campeão) */
+.campeao-pennant {
+    background: var(--bg-group-card);
+    border: 2px solid var(--accent-neon);
+    color: white;
+    padding: 25px;
+    margin: 40px auto;
+    width: 90%;
+    max-width: 300px;
+    text-align: center;
+    clip-path: square(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.campeao-flag {
+    width: 64px;
+    height: 42px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.campeao-titulo { color: var(--accent-neon); font-size: 0.9rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+.campeao-time { font-size: 1.5rem; font-weight: 800; margin-bottom: 5px; }
