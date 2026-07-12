@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaveamentos Mundiais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header-streaming">
+        <img src="assets/logo.png" class="logo-copa" alt="Logo">
+        <h1 class="titulo-principal">Chaveamentos Mundiais</h1>
+    </header>
+
+    <!-- Container onde o app.js irá injetar os botões automaticamente -->
+    <div id="ano-container" class="ano-container"></div>
+
+    <div class="aba-container">
+        <button class="aba-btn active" onclick="mostrarAba('grupos')">Grupos</button>
+        <button class="aba-btn" onclick="mostrarAba('mata-mata')">Mata-Mata</button>
+    </div>
+
+    <main id="conteudo-copa">
+        <div id="container-grupos" class="aba-conteudo"></div>
+        <div id="container-mata-mata" class="aba-conteudo" style="display: none;"></div>
+    </main>
+
+    <!-- Ordem correta de carregamento: Dados primeiro, app depois -->
+    <script src="dados/copa2006.js"></script>
+    <script src="dados/copa2010.js"></script>
+    <script src="dados/copa2014.js"></script>
+    <script src="dados/copa2018.js"></script>
+    <script src="dados/copa2022.js"></script>
+    <script src="dados/copa2026.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
